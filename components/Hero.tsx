@@ -396,7 +396,6 @@ export default function Hero() {
           {HERO.headline.slice(0,-1).map((l,i)=><span key={i} style={{display:"block"}}>{l}</span>)}
           <span style={{ display:"block", color:"var(--teal-400)" }}>{HERO.headline[HERO.headline.length-1]}</span>
         </h1>
-        <div className="anim-fade-up delay-400" style={{ width:48, height:2.5, background:"var(--teal-500)", marginBottom:26, opacity:0.7 }}/>
         <p className="hero-desc anim-fade-up delay-400" style={{ fontFamily:"Inter,sans-serif", fontSize:21, fontWeight:400, color:"#d4e8e0", lineHeight:1.72, maxWidth:480, marginBottom:42 }}>
           {HERO.description}
         </p>
