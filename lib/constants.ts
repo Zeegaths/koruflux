@@ -4,11 +4,11 @@
 // ─────────────────────────────────────────────────────────────
 
 export const NAV_LINKS = [
-  { label: "Solutions",   href: "#services" },
   { label: "Services",   href: "#services" },
-  { label: "Insights",   href: "#tech" },
-  { label: "Case Studies", href: "#tech" },
-  { label: "About",      href: "#sgp" },
+  { label: "Capabilities",   href: "#tech" },
+  { label: "Engagements",   href: "#pricing-anchor" },
+  { label: "About", href: "#sgp" },
+  { label: "Contact",      href: "#cta" },
 ] as const;
 
 export const HERO = {
