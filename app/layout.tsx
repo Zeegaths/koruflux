@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://koruflux.com"),
-  title: "KoruFlux — Global Intelligence, Local Execution",
+  title: "KoruFlux",
   description:
     "KoruFlux orchestrates complex market entries and digital transformations for Web3 protocols, DeFi platforms, and RWA projects expanding globally.",
   keywords: [
