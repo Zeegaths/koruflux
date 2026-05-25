@@ -203,59 +203,58 @@ const VISUALS = { web3: Web3Visual, ai: AIVisual, analytics: AnalyticsVisual };
 
 export default function TechCapabilities() {
   return (
-    <section id="tech" className="section-pad">
-      <div className="eyebrow" style={{ marginBottom:14 }}>Capabilities</div>
-      <h2 className="h-section" style={{ fontSize:"clamp(31px,3.8vw,51px)", color:"#fff", marginBottom:14 }}>
-        Intersectional Tech<br/>Capabilities
-      </h2>
-      <p className="section-sub" style={{ color:"#a8c4ba" }}>
-        We operate at the nexus of emerging technology and frontier markets, providing technical clarity for executive decision-making.
-      </p>
-      <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:16 }}>
-        {TECH_CARDS.map(card => {
-          const Visual = VISUALS[card.visual as keyof typeof VISUALS];
-          return (
-            <div key={card.title}
-              style={{
-                background:"rgba(10,22,18,0.6)",
-                backdropFilter:"blur(18px)",
-                WebkitBackdropFilter:"blur(18px)",
-                border:"1px solid rgba(255,255,255,0.07)",
-                borderRadius:8,
-                overflow:"hidden",
-                boxShadow:"0 8px 32px rgba(0,0,0,0.4)",
-                transition:"transform 0.3s, border-color 0.3s, box-shadow 0.3s",
-              }}
-              onMouseEnter={e=>{
-                const el=e.currentTarget as HTMLElement;
-                el.style.transform="translateY(-5px)";
-                el.style.borderColor="rgba(255,255,255,0.14)";
-                el.style.boxShadow="0 0 24px rgba(45,138,122,0.15), 0 16px 40px rgba(0,0,0,0.5)";
-              }}
-              onMouseLeave={e=>{
-                const el=e.currentTarget as HTMLElement;
-                el.style.transform="";
-                el.style.borderColor="rgba(255,255,255,0.07)";
-                el.style.boxShadow="0 8px 32px rgba(0,0,0,0.4)";
-              }}
-            >
-              <div style={{ height:200, overflow:"hidden" }}><Visual/></div>
-              <div style={{ padding:"20px 22px 26px" }}>
-                <div style={{ fontFamily:"Inter,sans-serif", fontSize:14, letterSpacing:"0.14em", textTransform:"uppercase", color:"#4a8070", marginBottom:7, fontWeight:700 }}>{card.tag}</div>
-                <h3 style={{ fontFamily:"Barlow,sans-serif", fontSize:23, fontWeight:800, color:"#fff", marginBottom:10 }}>{card.title}</h3>
-                <p style={{ fontFamily:"Inter,sans-serif", fontSize:15, fontWeight:300, color:"#a8c0b8", lineHeight:1.65, marginBottom:16 }}>{card.description}</p>
-                <ul style={{ listStyle:"none", padding:0, margin:0 }}>
-                  {card.items.map(item=>(
-                    <li key={item} style={{ fontFamily:"Inter,sans-serif", fontSize:14, color:"#6a8878", padding:"4px 0", display:"flex", alignItems:"center", gap:8 }}>
-                      <div style={{ width:3, height:3, borderRadius:"50%", background:"#2d8a7a", flexShrink:0 }}/>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+    <section id="tech" style={{ background:"#f7f5f2", borderBottom:"1px solid #e0ddd6" }}>
+      <div style={{ maxWidth:1160, margin:"0 auto", padding:"88px 64px" }}>
+        <p style={{ fontFamily:"Inter,sans-serif", fontSize:11, fontWeight:600, letterSpacing:"0.2em", textTransform:"uppercase", color:"#2d8a7a", marginBottom:14 }}>Capabilities</p>
+        <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(28px,3.2vw,42px)", fontWeight:700, color:"#1a2420", marginBottom:14, maxWidth:500 }}>
+          Intersectional Tech Capabilities
+        </h2>
+        <p style={{ fontFamily:"Inter,sans-serif", fontSize:16, color:"#4a5a54", lineHeight:1.78, maxWidth:560, marginBottom:52 }}>
+          We operate at the nexus of emerging technology and frontier markets, providing technical clarity for executive decision-making.
+        </p>
+        <div className="tech-grid-3" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:20 }}>
+          {TECH_CARDS.map(card => {
+            const Visual = VISUALS[card.visual as keyof typeof VISUALS];
+            return (
+              <div key={card.title}
+                style={{
+                  background:"#fff",
+                  border:"1px solid #e0ddd6",
+                  borderTop:`3px solid #2d8a7a`,
+                  borderRadius:3,
+                  overflow:"hidden",
+                  boxShadow:"0 2px 12px rgba(0,0,0,0.04)",
+                  transition:"transform 0.2s, box-shadow 0.2s",
+                }}
+                onMouseEnter={e=>{
+                  const el=e.currentTarget as HTMLElement;
+                  el.style.transform="translateY(-3px)";
+                  el.style.boxShadow="0 12px 32px rgba(0,0,0,0.09)";
+                }}
+                onMouseLeave={e=>{
+                  const el=e.currentTarget as HTMLElement;
+                  el.style.transform="";
+                  el.style.boxShadow="0 2px 12px rgba(0,0,0,0.04)";
+                }}
+              >
+                <div style={{ height:180, overflow:"hidden", background:"#071410" }}><Visual/></div>
+                <div style={{ padding:"22px 24px 28px" }}>
+                  <p style={{ fontFamily:"Inter,sans-serif", fontSize:11, letterSpacing:"0.16em", textTransform:"uppercase", color:"#2d8a7a", marginBottom:8, fontWeight:600 }}>{card.tag}</p>
+                  <h3 style={{ fontFamily:"'Playfair Display',serif", fontSize:20, fontWeight:700, color:"#1a2420", marginBottom:8 }}>{card.title}</h3>
+                  <p style={{ fontFamily:"Inter,sans-serif", fontSize:14, color:"#4a5a54", lineHeight:1.7, marginBottom:14 }}>{card.description}</p>
+                  <ul style={{ listStyle:"none", padding:0, margin:0 }}>
+                    {card.items.map(item=>(
+                      <li key={item} style={{ fontFamily:"Inter,sans-serif", fontSize:13, color:"#888", padding:"4px 0", display:"flex", alignItems:"center", gap:8 }}>
+                        <div style={{ width:3, height:3, borderRadius:"50%", background:"#2d8a7a", flexShrink:0 }}/>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </section>
   );
