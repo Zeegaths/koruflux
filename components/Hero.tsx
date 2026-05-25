@@ -226,7 +226,7 @@ function NairobiSkyline() {
 
 export default function Hero() {
   return (
-    <section id="hero" style={{ minHeight:"100vh", paddingTop:64, position:"relative", overflow:"hidden" }}>
+    <section id="hero" style={{ height:"100vh", position:"relative", overflow:"hidden" }}>
 
       {/* Skyline background */}
       <div style={{ position:"absolute", inset:0, zIndex:1 }}>
@@ -249,10 +249,10 @@ export default function Hero() {
       <div style={{
         position:"relative", zIndex:10,
         display:"flex", flexDirection:"column", justifyContent:"center",
-        minHeight:"calc(100vh - 64px)",
-        padding:"0 64px 0 72px",
+        height:"100%",
+        paddingTop:64,
+        padding:"64px 64px 0 72px",
         width:"55%",
-        marginTop:"-80px",
       }}>
 
         {/* Eyebrow */}
