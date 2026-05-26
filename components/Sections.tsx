@@ -124,9 +124,31 @@ export function CTASection() {
   const [loading, setLoading] = useState(false);
   const [form, setForm] = useState({ name:"", company:"", email:"", service:"Entry Programme", message:"" });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmitted(true); }, 1400);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await fetch("https://formspree.io/f/xkoeqylw", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          service: form.service,
+          message: form.message,
+        }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        alert("Something went wrong. Please email us at admin@koruflux.com");
+      }
+    } catch {
+      alert("Network error. Please email us at admin@koruflux.com");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputStyle: React.CSSProperties = {
@@ -153,7 +175,7 @@ export function CTASection() {
             <h2 style={{ fontFamily:"'Playfair Display',serif", fontSize:"clamp(22px,2.8vw,36px)", fontWeight:700, color:"#fff", marginBottom:12 }}>
               Ready to enter a new market?
             </h2>
-            <p style={{ fontFamily:"Inter,sans-serif", fontSize:16, color:"rgba(255,255,255,0.75)", lineHeight:1.75, maxWidth:440 }}>
+            <p style={{ fontFamily:"Inter,sans-serif", fontSize:16, color:"rgba(255,255,255,0.75)", lineHeight:1.75, maxWidth:500 }}>
               Book a diagnostic session and get a clear entry roadmap in 48 hours.
             </p>
           </div>
