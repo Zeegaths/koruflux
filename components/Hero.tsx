@@ -250,8 +250,10 @@ export default function Hero() {
         position:"relative", zIndex:10,
         display:"flex", flexDirection:"column", justifyContent:"center",
         height:"100%",
-        paddingTop:64,
-        padding:"64px 64px 0 72px",
+        paddingTop:80,
+        paddingLeft:72,
+        paddingRight:64,
+        paddingBottom:0,
         width:"55%",
       }}>
 
